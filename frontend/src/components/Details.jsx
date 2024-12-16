@@ -43,7 +43,7 @@ const Details = () => {
           <li>
             <strong>GitHub:</strong>{' '}
             <a
-              href="https://github.com/your-repo"
+              href="https://github.com/Suresh-1208/Garbage-Prediction"
               target="_blank"
               rel="noopener noreferrer"
             >
