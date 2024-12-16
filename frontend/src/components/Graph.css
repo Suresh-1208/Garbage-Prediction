@@ -1,0 +1,94 @@
+/* Body styling */
+body {
+    background: linear-gradient(135deg, #f8f9fa 25%, #00c6ff 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main container */
+.chart-container {
+    background: linear-gradient(135deg, #ffffff, #dfe4ea);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    height: auto;
+}
+
+/* Heading styling */
+h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    background-color: #00c6ff;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 198, 255, 0.2);
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #ff7e5f;
+    box-shadow: 0 6px 20px rgba(255, 126, 95, 0.4);
+}
+
+/* Chart container styling */
+.chart-container > div {
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+}
+
+/* Error message */
+p {
+    color: #ff4d4d;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .chart-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+}

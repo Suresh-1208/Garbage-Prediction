@@ -1,0 +1,85 @@
+/* Container styling */
+.details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    background-color: #f4f4f9;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Content area styling */
+.details-content {
+    max-width: 600px; /* Further reduced max width */
+    text-align: left;
+    font-size: 14px; /* Reduced font size */
+    color: #555;
+    background-color: #ffffff;
+    padding: 10px; /* Reduced padding */
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles */
+.details-content h1 {
+    font-size: 1.8rem; /* Reduced font size */
+    margin-bottom: 10px; /* Reduced margin */
+    text-align: center;
+    color: #333;
+}
+
+.details-content h2,
+.details-content h3 {
+    margin-bottom: 8px; /* Reduced bottom margin */
+    font-size: 1.2rem; /* Reduced font size */
+    color: #333;
+}
+
+.details-content p,
+.details-content ul {
+    margin-bottom: 8px; /* Reduced bottom margin */
+    line-height: 1.4; /* Tighter line spacing */
+    font-size: 14px; /* Further reduced font size */
+}
+
+.details-content ul {
+    list-style-type: disc;
+    margin-left: 10px; /* Reduced left margin */
+}
+
+/* Button styling */
+.back-button {
+    padding: 6px 12px; /* Further reduced padding */
+    font-size: 14px; /* Slightly smaller font size */
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+/* Link styling in Contact section */
+.details-content a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px; /* Adjusted font size */
+}
+
+.details-content a:hover {
+    text-decoration: underline;
+}
+
+/* Email and GitHub list styling */
+.details-content ul {
+    list-style-type: disc;
+    margin-left: 10px; /* Further reduced left margin */
+    margin-bottom: 10px; /* Adjusted bottom margin */
+    line-height: 1.4; /* Tighter line spacing */
+}
