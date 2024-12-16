@@ -5,16 +5,13 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 import numpy as np
 import os
 
-# Suppress TensorFlow logs
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 
 app = Flask(__name__)
 
-# Enable CORS for all routes
 CORS(app)
 
-# Load your trained models (saved as .pkl files)
 models = {
     "cnn": joblib.load("models/cnn_model.pkl"),
     "efficient": joblib.load("models/efficientnet_model.pkl"),
@@ -22,7 +19,6 @@ models = {
     "denseNet": joblib.load("models/DenseNet_model.pkl"),
 }
 
-# Define class labels
 class_labels = ['Cardboard', 'Glass', 'Metal', 'Paper', 'Plastic', 'Trash']
 
 @app.route('/predict', methods=['POST'])
@@ -39,32 +35,29 @@ def predict():
     if model_name not in models:
         return jsonify({"error": f"Model {model_name} not found"}), 400
 
-    # Save the uploaded file temporarily
     filepath = os.path.join("temp", file.filename)
     os.makedirs("temp", exist_ok=True)
     file.save(filepath)
 
     try:
-        # Set target size based on the model
         if model_name == "cnn":
-            target_size = (150, 150)  # CNN expects input shape (150, 150, 3)
+            target_size = (150, 150)  
         elif model_name == "efficient":
-            target_size = (224, 224)  # EfficientNet expects input shape (224, 224, 3)
+            target_size = (224, 224)  
         else:
-            target_size = (224, 224)  # Other models use 224x224 by default
+            target_size = (224, 224)  
 
-        # Preprocess the image
-        img = load_img(filepath, target_size=target_size)  # Resize image
-        img_array = img_to_array(img) / 255.0  # Normalize the image
-        img_array = np.expand_dims(img_array, axis=0)  # Add batch dimension
+       
+        img = load_img(filepath, target_size=target_size)  
+        img_array = img_to_array(img) / 255.0  
+        img_array = np.expand_dims(img_array, axis=0)  
 
-        # Perform prediction
+        
         model = models[model_name]
-        predictions = model.predict(img_array)  # Predict based on the processed input
-        predicted_class = class_labels[np.argmax(predictions)]  # Find the predicted class
-        accuracy = float(np.max(predictions)) * 100  # Calculate the accuracy
-
-        # Remove the temporary file
+        predictions = model.predict(img_array)  
+        predicted_class = class_labels[np.argmax(predictions)]  
+        accuracy = float(np.max(predictions)) * 100 
+        
         os.remove(filepath)
 
         return jsonify({"prediction": predicted_class, "accuracy": accuracy})
