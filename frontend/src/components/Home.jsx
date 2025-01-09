@@ -12,7 +12,7 @@ const Home = () => {
 
     return (
         <div className="container">
-            <h1 >Welcome to the Garbage Prediction website</h1>
+            <h1 >Welcome to the Garbage Classification website</h1>
             
             <div className="button-container">
                 <button 

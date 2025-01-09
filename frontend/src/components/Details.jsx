@@ -15,7 +15,7 @@ const Details = () => {
         <h1>Project Overview</h1>
         <h2>Garbage Prediction Application</h2>
         <p>
-          This web app classifies images using pre-trained models: CNN, VGG16, ResNet50, and MobileNet. Users can upload an image, select a model, and view predictions along with accuracy.
+          This web app classifies images using pre-trained models: CNN, denseNet, MobileNet,efficient. Users can upload an image, select a model, and view predictions along with accuracy.
         </p>
         <h3>Key Features:</h3>
         <ul>
@@ -28,7 +28,7 @@ const Details = () => {
         <ul>
           <li><strong>Frontend:</strong> React, Chart.js</li>
           <li><strong>Backend:</strong> Flask, TensorFlow</li>
-          <li><strong>Models:</strong> CNN, VGG16, ResNet50, MobileNet</li>
+          <li><strong>Models:</strong> CNN, denseNet, MobileNet,efficient</li>
         </ul>
         <h3>Contact and Support:</h3>
         <p>

@@ -44,7 +44,7 @@ const ImageUpload = () => {
         formData.append('model', model);
 
         try {
-            const response = await axios.post('http://127.0.0.1:5000/predict', formData, {
+            const response = await axios.post('https://garbage-prediction-1.onrender.com/predict', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
@@ -79,7 +79,7 @@ const ImageUpload = () => {
 
     return (
         <div className="container">
-            <h1>Garbage Image Prediction</h1>
+            <h1>Garbage Classification</h1>
             <h3>Select the Model</h3>
             <div>
                 <button className="model-button" onClick={() => setModel('cnn')}>CNN</button>
