@@ -16,10 +16,10 @@ CORS(app)
 # Load all models into a dictionary
 models = {}
 model_paths = {
-    "cnn": "models/cnn_model.pkl",
-    "efficient": "models/efficientnet_model.pkl",
-    "mobileNet": "models/mobilenet_model.pkl",
-    "denseNet": "models/DenseNet_model.pkl",
+    "cnn": "cnn_model.pkl",
+    "efficient": "efficientnet_model.pkl",
+    "mobileNet": "mobilenet_model.pkl",
+    "denseNet": "DenseNet_model.pkl",
 }
 
 # Attempt to load models and handle errors
