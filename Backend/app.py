@@ -93,7 +93,7 @@ import tensorflow as tf
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 
-# Suppress TensorFlow logs for cleaner console output
+# Suppress TensorFlow warnings
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 
@@ -101,13 +101,13 @@ os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 app = Flask(__name__)
 CORS(app)
 
-# Load all models into a dictionary
+# Load models into a dictionary
 models = {}
 model_paths = {
-    "cnn": "cnn_model.h5",
-    "efficient": "efficientnet_model.h5",
-    "mobileNet": "mobilenet.h5",
-    "denseNet": "DenseNet.h5",
+    "cnn": "cnn_model.keras",
+    "efficient": "efficitent.keras",
+    "mobileNet": "mobilenet.keras",
+    "denseNet": "DenseNet.keras",
 }
 
 # Attempt to load models and handle errors
