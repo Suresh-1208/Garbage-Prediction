@@ -113,8 +113,11 @@ model_paths = {
 # Attempt to load models and handle errors
 for model_name, path in model_paths.items():
     try:
-        models[model_name] = load_model(path)
-        print(f"Loaded {model_name} model successfully.")
+        if os.path.exists(path):
+            models[model_name] = load_model(path)
+            print(f"Loaded {model_name} model successfully.")
+        else:
+            print(f"Model file {path} not found. Skipping {model_name}.")
     except Exception as e:
         print(f"Error loading {model_name} model: {e}")
 
@@ -136,7 +139,7 @@ def predict():
             return jsonify({"error": "No selected file"}), 400
 
         if model_name not in models:
-            return jsonify({"error": f"Model {model_name} not found"}), 400
+            return jsonify({"error": f"Model '{model_name}' not found or failed to load"}), 400
 
         # Save the uploaded file temporarily
         temp_dir = "temp"
@@ -159,8 +162,7 @@ def predict():
         accuracy = float(np.max(predictions)) * 100
 
         # Cleanup: Remove the temporary file safely
-        if os.path.exists(filepath):
-            os.remove(filepath)
+        os.remove(filepath)
 
         # Return prediction result
         return jsonify({"prediction": predicted_class, "accuracy": accuracy})
