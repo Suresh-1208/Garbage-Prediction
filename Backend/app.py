@@ -85,6 +85,8 @@
 # if __name__ == '__main__':
 #     port = int(os.environ.get('PORT', 5000))  # Bind to PORT provided by Render
 #     app.run(host='0.0.0.0', port=port, debug=False)
+
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import numpy as np
@@ -104,7 +106,7 @@ CORS(app)
 # Load models into a dictionary
 models = {}
 model_paths = {
-    "cnn": "cnn_model.keras",
+    "cnn": "Cnn_model.keras",
     "efficient": "efficitent.keras",
     "mobileNet": "mobilenet.keras",
     "denseNet": "DenseNet.keras",

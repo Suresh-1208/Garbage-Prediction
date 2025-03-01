@@ -44,7 +44,7 @@ const ImageUpload = () => {
         formData.append('model', model);
 
         try {
-            const response = await axios.post('https://garbage-prediction-babus-projects-7ba3a387.vercel.app/predict', formData, {
+            const response = await axios.post('http://127.0.0.1:5000/predict', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
